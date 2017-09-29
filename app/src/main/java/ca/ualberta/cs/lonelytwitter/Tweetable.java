@@ -2,10 +2,13 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
-/**
- * Created by damon on 9/12/2017.
- */
 
+
+/**
+ * A Tweetable Interface
+ * @author jiaxiong yang
+ * @version 1.0
+ */
 public interface Tweetable {
     String getMessage();
     Date getDate();

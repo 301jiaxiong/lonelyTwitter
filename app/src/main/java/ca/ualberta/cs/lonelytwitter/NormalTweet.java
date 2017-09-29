@@ -2,10 +2,13 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
-/**
- * Created by damon on 9/12/2017.
- */
 
+/**
+ * Represent a NormalTweet extends Tweet
+ * @author jiaxiong yang
+ * @see Tweet
+ * @version 1.0
+ */
 public class NormalTweet extends Tweet {
     public NormalTweet(String message) {
         super(message);
@@ -15,6 +18,11 @@ public class NormalTweet extends Tweet {
         super(message, date);
     }
     @Override
+    /**
+     * Tweet is not Important
+     * @return FALSE
+     *
+     */
     public Boolean isImportant(){
         return Boolean.FALSE;
     }

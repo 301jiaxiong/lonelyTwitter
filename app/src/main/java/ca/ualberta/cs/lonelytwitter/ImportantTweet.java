@@ -3,9 +3,11 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by damon on 9/12/2017.
+ * Represent a ImportantTweet extends Tweet
+ * @author jiaxiong yang
+ * @see Tweet
+ * @version 1.0
  */
-
 public class ImportantTweet extends Tweet implements Tweetable {
     public ImportantTweet(String message){
         super(message);     //call the parent
@@ -16,6 +18,11 @@ public class ImportantTweet extends Tweet implements Tweetable {
     }
 
     @Override
+    /**
+     * Tweet is Important
+     * @return TRUE
+     *
+     */
     public Boolean isImportant(){
         return Boolean.TRUE;
     }

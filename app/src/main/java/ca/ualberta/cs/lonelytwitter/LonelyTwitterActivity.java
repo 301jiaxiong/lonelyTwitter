@@ -24,7 +24,17 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
+/**
+ * Represented a TwitterActivity.
+ *
+ * @author jiaxiong Yang
+ * @version 1.5
+ * @see Tweet
+ * @see NormalTweet
+ * @see ImportantTweet
+ * @since 1.0
+ *
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -86,6 +96,11 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * Load file
+	 * @throws FileNotFoundException
+	 * @throws RuntimeException
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -106,7 +121,12 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
+	/**
+	 * Save file
+	 * @throws FileNotFoundException
+	 * @throws RuntimeException
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
