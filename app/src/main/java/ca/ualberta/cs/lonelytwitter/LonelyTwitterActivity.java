@@ -63,7 +63,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 
-				NormalTweet newTweet = new NormalTweet("Hello");  //calling the first construtor in Tweet
+				NormalTweet newTweet = new NormalTweet(text);  //calling the first construtor in Tweet
 
 				tweetList.add(newTweet);
 
