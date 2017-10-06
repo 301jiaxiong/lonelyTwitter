@@ -66,10 +66,8 @@ public class ElasticsearchTweetController {
                     "  \"sort\": { \"date\": { \"order\": \"desc\" } },\n" +
                     "  \"size\": 10\n" +
                     "}";*/
-
-            Search search = new Search.Builder(search_parameters[0])
-                    .addIndex("testing")
-                    .addType("tweet")
+            String query = "{\n" + " \"query\": { \"term\": {\"message\":\"" + search_parameters[0] + "\"} }\n" + "}";
+            Search search = new Search.Builder(query)
                     .build();
             try {
                 SearchResult result = client.execute(search);

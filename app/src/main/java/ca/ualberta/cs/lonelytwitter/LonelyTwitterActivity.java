@@ -26,6 +26,8 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import io.searchbox.core.Search;
+
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -66,7 +68,11 @@ public class LonelyTwitterActivity extends Activity {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
-				tweetList.clear();
+				String text = bodyText.getText().toString();
+				//tweetList.clear();
+				String query = "{\n" + " \"query\": { \"term\": {\"message\":\"" +  text + "\"} }\n" + "}";
+				Search search = new Search.Builder(query)
+						.build();
 				deleteFile(FILENAME);  // TODO deprecate this button
 				adapter.notifyDataSetChanged();
 			}
