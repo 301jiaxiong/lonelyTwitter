@@ -7,6 +7,11 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by damon on 10/10/2017.
@@ -63,4 +68,18 @@ public class TweetListTest extends ActivityInstrumentationTestCase2{
         assertEquals(returnedTweet.getMessage(),myTweet.getMessage());
         assertEquals(returnedTweet.getDate(),myTweet.getDate());
     }
+    public void testSortedTweets(){
+        TweetList tweets = new TweetList();
+        NormalTweet myTweet1 = new NormalTweet("my first tweet");
+        NormalTweet myTweet2 = new NormalTweet("my second tweet");
+
+        tweets.addTweet(myTweet1);
+        tweets.addTweet(myTweet2);
+
+        tweets.getTweets();
+        //two tweets time is too close
+        assertTrue(tweets.getTweet(1).getDate().compareTo(tweets.getTweet(0).getDate())==0);
+
+    }
+
 }
