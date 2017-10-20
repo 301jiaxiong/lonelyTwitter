@@ -68,7 +68,18 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
 			public void onItemClick(AdapterView<?> parent,View view,int positon,long id){
+
 				Intent intent = new Intent(activity, EditTweetActivity.class);
+
+				/*Take From https://stackoverflow.com/questions/18146614/
+				*how-to-send-string-from-one-activity-to-another
+                *2017/10/19
+                */
+
+				Tweet tweet = tweetList.get(positon);
+				String message = tweet.getMessage();
+				Date date = tweet.getDate();
+				intent.putExtra("message", message);
 				startActivity(intent);
 			}
 		});
